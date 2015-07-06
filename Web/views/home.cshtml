@@ -1,0 +1,13 @@
+@using AppFrame.ServiceInterface
+
+@{
+	ViewBag.title = "主页";
+}
+
+@if (Request.GetAuthedUser() == null){
+	<div>你好，请 <a href="/weblogin">登入</a> 或者 <a href="/webregister">注册</a> 。</div>
+}
+else
+{
+	<div>你好，<span>@(Request.GetAuthedUser().Name)</span>。<a href="/weblogout">登出</a> 。</div>
+}

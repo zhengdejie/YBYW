@@ -1,0 +1,10 @@
+@using ServiceStack
+@{
+	ViewBag.title = "登入";
+}
+<form action="/weblogin" method="post">
+	<input type="text" name="Email" placeholder="Email" value="@Request.GetParam("Email")" />
+	<input type="password" name="Password" placeholder="Password" value="@Request.GetParam("Password")" />
+	<button type="submit">Login</button>
+</form>
+<a href="webregister">去注册</a>

@@ -1,0 +1,39 @@
+@using AppFrame.Common.API
+@using AppFrame.Common.DTO
+@using ServiceStack.Text
+@using ServiceStack
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>@ViewBag.Title</title>
+	<script type="text/javascript" src="/public/js/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="/public/js/webframe.js"></script>
+	<style>
+	.message{
+	padding: 10px;
+	margin: 10px 0;
+	color: white;
+	}
+	.message-error{
+		background-color: #aa0000;
+	}
+	.message-success{
+		background-color: #00aa00;
+	}
+	.message-info{
+		background-color: #666666;
+	}
+	.message-warning{
+		background-color: #FFCC00;
+	}
+	</style>
+</head>
+<body>
+<h2>@ViewBag.Title</h2>
+@if (!String.IsNullOrEmpty(Model.Message)) {
+	<div class="message message-@Model.MessageType">@Model.Message</div>
+}
+@RenderBody()
+</body>
+</html>

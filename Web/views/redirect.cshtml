@@ -1,0 +1,7 @@
+@if (!String.IsNullOrEmpty(Model.RedirectUrl)){
+	<script>
+		setTimeout(function(){
+			location.href = "@Model.RedirectUrl";
+		}, 3000);
+	</script>
+}
